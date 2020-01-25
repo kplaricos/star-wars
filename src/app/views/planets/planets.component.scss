@@ -1,0 +1,91 @@
+a {
+  text-decoration: none !important;
+}
+
+.carousel-container {
+  .img-fluid {
+    width: 100%;
+    height: auto;
+  }
+
+  .carousel-title {
+    font-size: 1.2rem !important;
+  }
+  .carousel-short-desc {
+    font-size: 25px !important;
+  }
+}
+
+.planete-title {
+  font-size: 70px;
+  padding-top: 15px;
+  font-weight: 200;
+}
+
+.shadow {
+  box-shadow: rgba(210, 175, 255, 0.25) 0px 8px 32px !important;
+}
+
+.planete-details {
+  border: 0;
+
+  .bg-holder {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    will-change: transform,opacity,filter;
+    -webkit-backface-visibility: hidden;
+    z-index: 0;
+  }
+
+  .bg-card {
+    background-size: contain;
+    background-position: right;
+  }
+
+  .card-body {
+    .start-wars {
+      text-align: center;
+      display: block;
+      color: #b1b1ae;
+      font-size: 12px;
+    }
+
+    .card-title {
+      color: #333;
+      font-size: 20px;
+      text-transform: capitalize;
+      text-align: center;
+    }
+
+    .description {
+      text-align: center;
+      margin-bottom: 1rem !important;
+      color: #adadaa;
+      font-size: 14px;
+
+      .rounded-pill {
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+.planete-details:hover {
+  background: linear-gradient(130deg, #503bff 0%, #8293ff 100%);
+  box-shadow: none;
+  transform: scale(1.1);
+  transition: all 1s;
+
+  .card-body {
+    h3, .description {
+      color: white;
+      transition: all 1s;
+    }
+  }
+
+
+}

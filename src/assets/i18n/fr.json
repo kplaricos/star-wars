@@ -1,0 +1,27 @@
+{
+  "planets": {
+    "title": "Hello Angular with ngx-translate!",
+    "language": "Langue",
+    "films": "Films",
+    "planets": "Planètes",
+    "people": "Personnes",
+    "star_wars_planets": "Planètes Star Wars",
+    "a_solitary": "Une planète solitaire du système Al Har.",
+    "a_planet": "Une planète située dans la région de Bright Jewel dans le Mid Rim.",
+    "search_planets": "Search planets",
+    "searching": "Searching...",
+    "population": "Population",
+    "loading": "Chargement...",
+    "similar_planets": "Planètes similaires",
+    "name": "Nom",
+    "climate": "Climat",
+    "diameter": "Diamètre",
+    "gravity": "Gravité",
+    "orbital_period": "Période orbitale",
+    "rotation_period": "Période rotationelle",
+    "surface_water": "Eau de surface",
+    "land": "Terrains",
+    "creation_date": "Date de création",
+    "url": "Url"
+  }
+}

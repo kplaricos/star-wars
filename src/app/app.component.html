@@ -1,0 +1,19 @@
+<app-navbar-menu></app-navbar-menu>
+
+<main class="main-content bg-light">
+  <div class="language-container">
+    <label>
+      {{ 'planets.language' | translate }}
+      <select #langSelect (change)="translate.use(langSelect.value)" class="form-control language-select">
+        <option
+          *ngFor="let lang of translate.getLangs()"
+          [value]="lang"
+          [selected]="lang === translate.currentLang"
+        >
+          {{ lang }}
+        </option>
+      </select>
+    </label>
+  </div>
+  <router-outlet></router-outlet>
+</main>

@@ -1,0 +1,25 @@
+html, body {
+  height: 100%;
+  font-family: Montserrat, sans-serif !important
+}
+.pagination li a {
+  padding: 1rem 1.5rem !important;
+  color: #503bff !important;
+}
+.pagination>.active>a {
+  color: #fff !important;
+  background-color: #503bff !important;
+  border-color: #503bff !important;
+}
+.carousel-item {
+  position: initial !important;
+}
+.carousel-inner {
+  max-height: 50vh !important;
+}
+.form-control:focus {
+  box-shadow: none !important;
+}
+.badge {
+  font-size: 100% !important;
+}

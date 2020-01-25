@@ -1,0 +1,99 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <button class="btn btn-light mt-2" (click)="goBack()"> < Go Back </button>
+    </div>
+    <div class="col-6 mx-auto py-5 mt-5">
+      <p class="loading" *ngIf="loading"> {{ 'planets.loading' | translate }} </p>
+
+      <div class="card shadow-sm" *ngIf="planet">
+        <div class="card-body">
+          <div class="container" *ngIf="planet">
+            <dl class="row">
+              <dt class="col-md-3">
+                <b class="custom-bold">{{ 'planets.name' | translate }}</b>
+              </dt>
+              <dd class="col-md-9"> {{ planet.name }} </dd>
+
+              <dt class="col-md-3">
+                <b class="custom-bold">{{ 'planets.climate' | translate }}</b>
+              </dt>
+              <dd class="col-md-9"> {{ planet.climate }} </dd>
+
+              <dt class="col-md-3">
+                <b class="custom-bold">{{ 'planets.diameter' | translate }}</b>
+              </dt>
+              <dd class="col-md-9"> {{ planet.diameter }} </dd>
+
+              <dt class="col-md-3">
+                <b class="custom-bold">{{ 'planets.gravity' | translate }}</b>
+              </dt>
+              <dd class="col-md-9"> {{ planet.gravity }} </dd>
+
+              <dt class="col-md-3">
+                <b class="custom-bold">{{ 'planets.orbital_period' | translate }}</b>
+              </dt>
+              <dd class="col-md-9"> {{ planet.orbital_period }} </dd>
+
+              <dt class="col-md-3">
+                <b class="custom-bold">{{ 'planets.population' | translate }}</b>
+              </dt>
+              <dd class="col-md-9"> {{ planet.population }} </dd>
+
+              <dt class="col-md-3">
+                <b class="custom-bold">{{ 'planets.rotation_period' | translate }}</b>
+              </dt>
+              <dd class="col-md-9"> {{ planet.rotation_period }} </dd>
+
+              <dt class="col-md-3">
+                <b class="custom-bold">{{ 'planets.surface_water' | translate }}</b>
+              </dt>
+              <dd class="col-md-9"> {{ planet.surface_water }} </dd>
+
+              <dt class="col-md-3">
+                <b class="custom-bold">{{ 'planets.land' | translate }}</b>
+              </dt>
+              <dd class="col-md-9"> {{ planet.terrain }} </dd>
+
+              <dt class="col-md-3">
+                <b class="custom-bold">{{ 'planets.creation_date' | translate }}</b>
+              </dt>
+              <dd class="col-md-9"> {{ planet.created | date:'medium' }} </dd>
+
+              <dt class="col-md-3">
+                <b class="custom-bold">{{ 'planets.url' | translate }}</b>
+              </dt>
+              <dd class="col-md-9"> {{ planet.url }} </dd>
+
+              <dt class="col-md-3">
+                <b class="custom-bold">{{ 'planets.films' | translate }}</b>
+              </dt>
+              <div class="col-md-9">
+                <span *ngFor="let sFilms of planet.films"> {{ sFilms }} </span>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3 py-5 other-topics">
+      <h5>
+        {{ 'planets.similar_planets' | translate }}
+        <small class="text-muted" *ngIf="searching">
+          <i class="fas fa-spinner fa-spin"></i>
+        </small>
+      </h5>
+
+      <div class="text-left overflow-single" *ngFor="let sPlanet of suggests | slice:0:5">
+        <div class="p-3">
+          <a class="more-topics" routerLink="/planets/{{ sPlanet.id }}">
+            <span class="more-title"> {{ sPlanet.name }} </span>
+            (<small class="text-muted">{{ 'planets.population' | translate }}</small>&nbsp;<b> {{ sPlanet.population | numeral:'0 a' }} </b>)
+            <i class="fas fa-chevron-right float-right custom-chevron"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

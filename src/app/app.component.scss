@@ -1,0 +1,29 @@
+.main-content {
+  margin-left: 150px;
+
+  .language-container {
+    position: fixed;
+    bottom: 2%;
+    z-index: 9999;
+    left: 3%;
+    width: 14%;
+
+    .language-select {
+      box-shadow: none;
+      -webkit-appearance: none;
+      font-weight: 600;
+      font-size: 15px;
+      color: rgb(36, 41, 46);
+      text-align: center;
+      text-align-last: center;
+      padding: 8px 40px 8px 16px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: rgb(235, 236, 237);
+      border-image: initial;
+      border-radius: 32px;
+      overflow: hidden;
+      background: none rgb(255, 255, 255);
+    }
+  }
+}

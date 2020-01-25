@@ -1,0 +1,68 @@
+<div class="container-fluid">
+  <!-- Search bar -->
+  <div class="row sticky-top">
+    <div class="col-12 py-2 bg-light">
+      <app-planet-search (result)="onSearchResult($event)"></app-planet-search>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-auto px-0 carousel-container">
+        <carousel>
+          <slide>
+            <img src="../../../assets/images/Geonosis_AotC.png" alt="first slide" class="img-fluid">
+            <div class="carousel-caption d-none d-md-block">
+              <h3 class="carousel-title">Haruun Kal</h3>
+              <p class="carousel-short-desc">{{ 'planets.a_solitary' | translate }}</p>
+            </div>
+          </slide>
+          <slide>
+            <img src="../../../assets/images/mustafar-tall.jpg" alt="second slide" class="img-fluid">
+            <div class="carousel-caption d-none d-md-block">
+              <h3 class="carousel-title">Aleen Minor</h3>
+              <p class="carousel-short-desc">{{ 'planets.a_planet' | translate }}</p>
+            </div>
+          </slide>
+        </carousel>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-12 my-4 text-center">
+      <h1 class="planete-title pt-2 pb-4">{{ 'planets.star_wars_planets' | translate }}</h1>
+      <div class="fa-2x" *ngIf="loading">
+        <i class="fas fa-spinner fa-spin"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-start" *ngIf="planets?.records.length">
+    <div class="col-md-3 mb-4" *ngFor="let planet of planets.records">
+      <a class="card shadow bg-white planete-details" routerLink="/planets/{{ planet.id }}">
+        <div class="bg-holder bg-card"></div>
+        <div class="card-body">
+          <span class="start-wars">Star War's</span>
+          <h3 class="card-title">
+            {{ planet.name }}
+          </h3>
+
+          <div class="mb-2 description">
+            {{ 'planets.population' | translate }}
+            <span class="badge badge-light rounded-pill ml-2"> {{ planet.population | numeral: '0 a' }} </span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="planets?.meta">
+    <div class="mx-auto">
+      <pagination
+        [totalItems]="planets.meta.count"
+        [maxSize]="10"
+        (pageChanged)="onPageChanged($event)"
+        [(ngModel)]="currentPage"
+        ></pagination>
+    </div>
+  </div>
+</div>
